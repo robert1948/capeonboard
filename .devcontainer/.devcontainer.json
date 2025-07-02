@@ -1,0 +1,25 @@
+{
+  "name": "LocalStorm Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [8000, 5173],
+  "postCreateCommand": "cd backend && pip install -r requirements.txt",
+  "postStartCommand": "bash scripts/start_capeonboard.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "esbenp.prettier-vscode"],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
